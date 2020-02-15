@@ -31,6 +31,14 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             base.AfterConstruction();
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
-       
+
+        string name;
+
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string Name
+        {
+            get => name;
+            set => SetPropertyValue(nameof(Name), ref name, value);
+        }
     }
 }
