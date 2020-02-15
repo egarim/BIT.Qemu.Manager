@@ -29,8 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.InitizalizeDiskImage = new DevExpress.ExpressApp.Actions.SimpleAction(this.components);
+            // 
+            // InitizalizeDiskImage
+            // 
+            this.InitizalizeDiskImage.Caption = "Initialize Disk Image";
+            this.InitizalizeDiskImage.ConfirmationMessage = null;
+            this.InitizalizeDiskImage.Id = "95c53cd7-97ed-4508-a016-e3264c1a596b";
+            this.InitizalizeDiskImage.ToolTip = null;
+            this.InitizalizeDiskImage.Execute += new DevExpress.ExpressApp.Actions.SimpleActionExecuteEventHandler(this.InitizalizeDiskImage_Execute);
+            // 
+            // DiskImageController
+            // 
+            this.Actions.Add(this.InitizalizeDiskImage);
+
         }
 
         #endregion
+
+        private DevExpress.ExpressApp.Actions.SimpleAction InitizalizeDiskImage;
     }
 }

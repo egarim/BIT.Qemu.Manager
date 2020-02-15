@@ -29,9 +29,13 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            this.Memory = 2048;
+            this.MemoryUnitOfMeasure = UnitOfMeasure.MegaBytes;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        UnitOfMeasure _memoryUnitOfMeasure;
+        int _memory;
         string _name;
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
@@ -47,6 +51,18 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             {
                 return GetCollection<VirtualMachineDiskImage>(nameof(VirtualMachineDiskImages));
             }
+        }
+
+        public int Memory
+        {
+            get => _memory;
+            set => SetPropertyValue(nameof(Memory), ref _memory, value);
+        }
+        
+        public UnitOfMeasure MemoryUnitOfMeasure
+        {
+            get => _memoryUnitOfMeasure;
+            set => SetPropertyValue(nameof(MemoryUnitOfMeasure), ref _memoryUnitOfMeasure, value);
         }
     }
 }

@@ -7,19 +7,6 @@ using System.Linq;
 namespace BIT.Qemu.Manager.Module.BusinessObjects
 {
 
-    public enum DiskSizeUnitOfMeasure
-    {
-        KiloBytes=0,
-        MegaBytes=1,
-        GigaBytes=2,
-        TeraBytes=3,
-        PetaBytes=4,
-        ExaBytes=5
-
-
-       
-    }
-
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
@@ -36,12 +23,14 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         {
             base.AfterConstruction();
             this.DiskImageType = DiskImageType.Qcow2;
-            this.DiskSizeUnitOfMeasure = DiskSizeUnitOfMeasure.GigaBytes;
+            this.DiskSizeUnitOfMeasure = UnitOfMeasure.GigaBytes;
             this.Size = 10;
+            this.Initialized = false;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
-        DiskSizeUnitOfMeasure _diskSizeUnitOfMeasure;
+        bool _initialized;
+        UnitOfMeasure _diskSizeUnitOfMeasure;
         double _size;
         DiskImageType diskImageType;
         string name;
@@ -64,11 +53,17 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             get => _size;
             set => SetPropertyValue(nameof(Size), ref _size, value);
         }
-        
-        public DiskSizeUnitOfMeasure DiskSizeUnitOfMeasure
+
+        public UnitOfMeasure DiskSizeUnitOfMeasure
         {
             get => _diskSizeUnitOfMeasure;
             set => SetPropertyValue(nameof(DiskSizeUnitOfMeasure), ref _diskSizeUnitOfMeasure, value);
+        }
+        
+        public bool Initialized
+        {
+            get => _initialized;
+            set => SetPropertyValue(nameof(Initialized), ref _initialized, value);
         }
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BIT.Qemu.Manager.Module.BusinessObjects;
 using DevExpress.Data.Filtering;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
@@ -22,6 +23,7 @@ namespace BIT.Qemu.Manager.Module.Controllers
         public DiskImageController()
         {
             InitializeComponent();
+            this.TargetObjectType = typeof(DiskImage);
             // Target required Views (via the TargetXXX properties) and create their Actions.
         }
         protected override void OnActivated()
@@ -38,6 +40,13 @@ namespace BIT.Qemu.Manager.Module.Controllers
         {
             // Unsubscribe from previously subscribed events and release other references and resources.
             base.OnDeactivated();
+        }
+
+        private void InitizalizeDiskImage_Execute(object sender, SimpleActionExecuteEventArgs e)
+        {
+            var CurrentSettings=  Settings.GetInstance(this.ObjectSpace);
+
+
         }
     }
 }
