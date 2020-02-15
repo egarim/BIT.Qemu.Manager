@@ -25,39 +25,4 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         Vpc=6,
        
     }
-    [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class DiskImage : BaseObject
-    { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public DiskImage(Session session)
-            : base(session)
-        {
-        }
-        public override void AfterConstruction()
-        {
-            base.AfterConstruction();
-            this.DiskImageType = DiskImageType;
-            // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
-        }
-
-        DiskImageType diskImageType;
-        string name;
-
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Name
-        {
-            get => name;
-            set => SetPropertyValue(nameof(Name), ref name, value);
-        }
-        
-        public DiskImageType DiskImageType
-        {
-            get => diskImageType;
-            set => SetPropertyValue(nameof(DiskImageType), ref diskImageType, value);
-        }
-    }
 }

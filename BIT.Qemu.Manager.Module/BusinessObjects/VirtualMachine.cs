@@ -32,13 +32,13 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
-        string name;
+        string _name;
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
         public string Name
         {
-            get => name;
-            set => SetPropertyValue(nameof(Name), ref name, value);
+            get => _name;
+            set => SetPropertyValue(nameof(Name), ref _name, value);
         }
         [Association("VirtualMachine-VirtualMachineDiskImages")]
         public XPCollection<VirtualMachineDiskImage> VirtualMachineDiskImages

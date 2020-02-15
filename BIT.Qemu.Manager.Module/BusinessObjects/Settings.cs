@@ -48,5 +48,9 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             get => defaultVirtualMachineFolder;
             set => SetPropertyValue(nameof(DefaultVirtualMachineFolder), ref defaultVirtualMachineFolder, value);
         }
+
+
+
+
     }
 }
