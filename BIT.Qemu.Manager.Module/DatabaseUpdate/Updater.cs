@@ -7,6 +7,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.Xpo;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
+using BIT.Qemu.Manager.Module.BusinessObjects;
 
 namespace BIT.Qemu.Manager.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Updating.ModuleUpdater
@@ -16,6 +17,14 @@ namespace BIT.Qemu.Manager.Module.DatabaseUpdate {
         }
         public override void UpdateDatabaseAfterUpdateSchema() {
             base.UpdateDatabaseAfterUpdateSchema();
+
+
+            if (ObjectSpace.GetObjectsCount(typeof(Settings), null) == 0)
+            {
+                ObjectSpace.CreateObject<Settings>();
+            }
+            ObjectSpace.CommitChanges();
+
             //string name = "MyName";
             //DomainObject1 theObject = ObjectSpace.FindObject<DomainObject1>(CriteriaOperator.Parse("Name=?", name));
             //if(theObject == null) {
@@ -23,7 +32,7 @@ namespace BIT.Qemu.Manager.Module.DatabaseUpdate {
             //    theObject.Name = name;
             //}
 
-			//ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
+            //ObjectSpace.CommitChanges(); //Uncomment this line to persist created object(s).
         }
         public override void UpdateDatabaseBeforeUpdateSchema() {
             base.UpdateDatabaseBeforeUpdateSchema();

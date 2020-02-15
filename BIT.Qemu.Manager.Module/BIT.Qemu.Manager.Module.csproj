@@ -84,11 +84,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\DiskImage.cs" />
+    <Compile Include="BusinessObjects\Settings.cs" />
     <Compile Include="Controllers\DiskImageController.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\DiskImageController.Designer.cs">
       <DependentUpon>DiskImageController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SettingsController.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">

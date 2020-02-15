@@ -14,6 +14,17 @@ using DevExpress.Persistent.Validation;
 
 namespace BIT.Qemu.Manager.Module.BusinessObjects
 {
+    public enum DiskImageType
+    {
+        Raw=0,
+        Qcow2=1,
+        Qed=2,
+        Qcow=3,
+        Vmdk=4,
+        Vdi=5,
+        Vpc=6,
+       
+    }
     [DefaultClassOptions]
     //[ImageName("BO_Contact")]
     //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
@@ -29,9 +40,11 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            this.DiskImageType = DiskImageType;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        DiskImageType diskImageType;
         string name;
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
@@ -39,6 +52,12 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         {
             get => name;
             set => SetPropertyValue(nameof(Name), ref name, value);
+        }
+        
+        public DiskImageType DiskImageType
+        {
+            get => diskImageType;
+            set => SetPropertyValue(nameof(DiskImageType), ref diskImageType, value);
         }
     }
 }
