@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT.Qemu.Manager.Module", "BIT.Qemu.Manager.Module\BIT.Qemu.Manager.Module.csproj", "{6F288FA9-E840-4241-89FB-ECD6D7768305}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT.Qemu.Manager.Module.Web", "BIT.Qemu.Manager.Module.Web\BIT.Qemu.Manager.Module.Web.csproj", "{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT.Qemu.Manager.Web", "BIT.Qemu.Manager.Web\BIT.Qemu.Manager.Web.csproj", "{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT.Qemu.Manager.Module.Win", "BIT.Qemu.Manager.Module.Win\BIT.Qemu.Manager.Module.Win.csproj", "{336CAB59-C07E-424E-805B-A6E549BC8911}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT.Qemu.Manager.Win", "BIT.Qemu.Manager.Win\BIT.Qemu.Manager.Win.csproj", "{EDFB0A08-2750-449C-BB86-B54986335F9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F288FA9-E840-4241-89FB-ECD6D7768305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C18538-DE8B-437E-B7F8-BDFF10E91A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A27D7E7C-D466-44A5-9AE4-BD08EE22505B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336CAB59-C07E-424E-805B-A6E549BC8911}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFB0A08-2750-449C-BB86-B54986335F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4023519-D21A-4DB9-9C4E-92C0D4D2B0ED}
+	EndGlobalSection
+EndGlobal

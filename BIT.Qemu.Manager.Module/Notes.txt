@@ -1,0 +1,4 @@
+﻿How to create disk images
+https://www.poftut.com/linux-qemu-img-command-tutorial-examples-create-change-shrink-disk-images/
+
+
