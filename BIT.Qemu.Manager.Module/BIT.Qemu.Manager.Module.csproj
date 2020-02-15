@@ -83,8 +83,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\DiskImage.cs" />
+    <Compile Include="BusinessObjects\DiskImageType.cs" />
     <Compile Include="BusinessObjects\Settings.cs" />
+    <Compile Include="BusinessObjects\VirtualMachineDiskImage.cs" />
     <Compile Include="Controllers\DiskImageController.cs">
       <SubType>Component</SubType>
     </Compile>

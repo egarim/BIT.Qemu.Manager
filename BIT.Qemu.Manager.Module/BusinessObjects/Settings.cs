@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
+using System.IO;
 
 namespace BIT.Qemu.Manager.Module.BusinessObjects
 {
@@ -27,9 +28,11 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            this.DefaultVirtualMachineFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "QemuVMs");
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        string defaultVirtualMachineFolder;
         string qemuPath;
 
         [Size(SizeAttribute.DefaultStringMappingFieldSize)]
@@ -37,6 +40,13 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         {
             get => qemuPath;
             set => SetPropertyValue(nameof(QemuPath), ref qemuPath, value);
+        }
+        
+        [Size(300)]
+        public string DefaultVirtualMachineFolder
+        {
+            get => defaultVirtualMachineFolder;
+            set => SetPropertyValue(nameof(DefaultVirtualMachineFolder), ref defaultVirtualMachineFolder, value);
         }
     }
 }

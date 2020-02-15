@@ -14,15 +14,10 @@ using DevExpress.Persistent.Validation;
 
 namespace BIT.Qemu.Manager.Module.BusinessObjects
 {
-    [DefaultClassOptions]
-    //[ImageName("BO_Contact")]
-    //[DefaultProperty("DisplayMemberNameForLookupEditorsOfThisType")]
-    //[DefaultListViewOptions(MasterDetailMode.ListViewOnly, false, NewItemRowPosition.None)]
-    //[Persistent("DatabaseTableName")]
-    // Specify more UI options using a declarative approach (https://documentation.devexpress.com/#eXpressAppFramework/CustomDocument112701).
-    public class VirtualMachine : BaseObject
+   
+    public class VirtualMachineDiskImage : BaseObject
     { // Inherit from a different class to provide a custom primary key, concurrency and deletion behavior, etc. (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument113146.aspx).
-        public VirtualMachine(Session session)
+        public VirtualMachineDiskImage(Session session)
             : base(session)
         {
         }
@@ -32,21 +27,13 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
-        string name;
+        VirtualMachine virtualMachine;
 
-        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
-        public string Name
-        {
-            get => name;
-            set => SetPropertyValue(nameof(Name), ref name, value);
-        }
         [Association("VirtualMachine-VirtualMachineDiskImages")]
-        public XPCollection<VirtualMachineDiskImage> VirtualMachineDiskImages
+        public VirtualMachine VirtualMachine
         {
-            get
-            {
-                return GetCollection<VirtualMachineDiskImage>(nameof(VirtualMachineDiskImages));
-            }
+            get => virtualMachine;
+            set => SetPropertyValue(nameof(VirtualMachine), ref virtualMachine, value);
         }
     }
 }
