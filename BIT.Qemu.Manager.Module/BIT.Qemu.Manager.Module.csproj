@@ -84,8 +84,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\Device.cs" />
-    <Compile Include="BusinessObjects\DiskSizeUnitOfMeasure.cs" />
+    <Compile Include="BusinessObjects\DiskImage.cs" />
     <Compile Include="BusinessObjects\DiskImageType.cs" />
+    <Compile Include="BusinessObjects\ProcessStarter.cs" />
+    <Compile Include="BusinessObjects\QemuConstantsWin.cs" />
     <Compile Include="BusinessObjects\Settings.cs" />
     <Compile Include="BusinessObjects\UnitOfMeasure.cs" />
     <Compile Include="BusinessObjects\VirtualMachineDiskImage.cs" />

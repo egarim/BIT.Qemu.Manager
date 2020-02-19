@@ -1,7 +1,7 @@
 ﻿using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Xpo;
-using System;
+using System.IO;
 using System.Linq;
 
 namespace BIT.Qemu.Manager.Module.BusinessObjects
@@ -22,13 +22,16 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         public override void AfterConstruction()
         {
             base.AfterConstruction();
+            Settings settings = Settings.GetInstance(this.Session);
             this.DiskImageType = DiskImageType.Qcow2;
             this.DiskSizeUnitOfMeasure = UnitOfMeasure.GigaBytes;
             this.Size = 10;
             this.Initialized = false;
+            this.FilePath = settings.UnboundDiskFolder;
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        string _filePath;
         bool _initialized;
         UnitOfMeasure _diskSizeUnitOfMeasure;
         double _size;
@@ -41,7 +44,13 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             get => name;
             set => SetPropertyValue(nameof(Name), ref name, value);
         }
-
+        
+        [Size(300)]
+        public string FilePath
+        {
+            get => _filePath;
+            set => SetPropertyValue(nameof(FilePath), ref _filePath, value);
+        }
         public DiskImageType DiskImageType
         {
             get => diskImageType;
@@ -63,7 +72,21 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         public bool Initialized
         {
             get => _initialized;
-            set => SetPropertyValue(nameof(Initialized), ref _initialized, value);
+            private set => SetPropertyValue(nameof(Initialized), ref _initialized, value);
+        }
+        public void Initialize()
+        {
+            //qemu-img create -f qcow2 -o size=10G ubuntu.img
+            QemuConstantsWin qemuConstantsWin = new QemuConstantsWin();
+            Settings settings = Settings.GetInstance(this.Session);
+            var QemuImage= Path.Combine(settings.QemuPath, qemuConstantsWin.QemuImage);
+            string DiskFilePath = $"{Name}.{this.DiskImageType.ToParameter()}";
+
+            string FullPath = Path.Combine(settings.UnboundDiskFolder, DiskFilePath);
+
+                string arguments = $"create -f {this.DiskImageType.ToParameter()} -o size={this.Size}{this.DiskSizeUnitOfMeasure.ToParameter()} {FullPath}";
+            ProcessStarter.ExecuteProcess(QemuImage, arguments);
+
         }
 
     }

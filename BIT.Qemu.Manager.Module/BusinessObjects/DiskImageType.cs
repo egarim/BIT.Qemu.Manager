@@ -25,4 +25,11 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         Vpc=6,
        
     }
+    static class DiskImageTypeExtensions
+    {
+        public static string ToParameter(this DiskImageType DiskImageType)
+        {
+            return DiskImageType.ToString().ToLower();
+        }
+    }
 }

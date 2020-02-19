@@ -44,8 +44,8 @@ namespace BIT.Qemu.Manager.Module.Controllers
 
         private void InitizalizeDiskImage_Execute(object sender, SimpleActionExecuteEventArgs e)
         {
-            var CurrentSettings=  Settings.GetInstance(this.ObjectSpace);
-
+            //var CurrentSettings=  Settings.GetInstance(this.ObjectSpace);
+            ((DiskImage)e.CurrentObject).Initialize();
 
         }
     }

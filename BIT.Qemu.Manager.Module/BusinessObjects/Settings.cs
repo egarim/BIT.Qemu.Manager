@@ -29,9 +29,12 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
         {
             base.AfterConstruction();
             this.DefaultVirtualMachineFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "QemuVMs");
+            this.QemuPath = @"C:\Program Files\qemu";
+            this.UnboundDiskFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "QemuDisk");
             // Place your initialization code here (https://documentation.devexpress.com/eXpressAppFramework/CustomDocument112834.aspx).
         }
 
+        string _unboundDiskFolder;
         string defaultVirtualMachineFolder;
         string qemuPath;
 
@@ -41,18 +44,28 @@ namespace BIT.Qemu.Manager.Module.BusinessObjects
             get => qemuPath;
             set => SetPropertyValue(nameof(QemuPath), ref qemuPath, value);
         }
-        
+
         [Size(300)]
         public string DefaultVirtualMachineFolder
         {
             get => defaultVirtualMachineFolder;
             set => SetPropertyValue(nameof(DefaultVirtualMachineFolder), ref defaultVirtualMachineFolder, value);
         }
+        
+        [Size(SizeAttribute.DefaultStringMappingFieldSize)]
+        public string UnboundDiskFolder
+        {
+            get => _unboundDiskFolder;
+            set => SetPropertyValue(nameof(UnboundDiskFolder), ref _unboundDiskFolder, value);
+        }
         public static Settings GetInstance(IObjectSpace Os)
         {
             return Os.GetObjects<Settings>()[0];
         }
-
+        public static Settings GetInstance(Session Os)
+        {
+            return Os.FindObject<Settings>(null);
+        }
 
 
 
